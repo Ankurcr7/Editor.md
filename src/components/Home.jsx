@@ -9,8 +9,8 @@ export default function Home() {
   useEffect(() => {
     const scroller = document.body
     scroller.scrollIntoView({ behavior: 'smooth' })
-    scroller.scrollTo(0,0)
-  },[]);
+    scroller.scrollTo(0, 0)
+  }, []);
 
 
   const clearTextarea = () => {
@@ -34,7 +34,7 @@ export default function Home() {
 
   }
 
-  //@deprecate
+  // @deprecate
   // let fileHandle;
   // const openmd = async () => {
   //   try {
@@ -55,30 +55,50 @@ export default function Home() {
 
   // }
 
-  let fileHandle;
-  const openfileOndevices =async () => {
-    try {
-      [fileHandle] = await window.showOpenFilePicker({
-        types: [{
-          description: 'Text documents',
-          accept: {
-            'text/plain': ['.txt'],
-            'text/html': ['.md'],
-          },
-        }],
-      });
-      const file = await fileHandle.getFile();
-      const reader = new FileReader();
-      reader.addEventListener("loadend", () => {
-        setMarkdownvalue(reader.result)
-      }, false);
+  // @deprecate
+  // let fileHandle;
+  // const openfileOndevices = async () => {
+  //   try {
+  //     [fileHandle] = await window.showOpenFilePicker({
+  //       types: [{
+  //         description: 'Text documents',
+  //         accept: {
+  //           'text/plain': ['.txt'],
+  //           'text/html': ['.md'],
+  //         },
+  //       }],
+  //     });
+  //     const file = await fileHandle.getFile();
+  //     const reader = new FileReader();
+  //     reader.addEventListener("loadend", () => {
+  //       setMarkdownvalue(reader.result)
+  //     }, false);
 
-      if (file){
-        reader.readAsText(file)
-      }
-    } catch (error) { }
-    
+  //     if (file) {
+  //       reader.readAsText(file)
+  //     }
+  //   } catch (error) { }
+
+  // }
+
+  const upgradedopenfileOndevices = () => {
+    const [file] = document.querySelector("input[type=file]").files;
+    const reader = new FileReader();
+
+    reader.addEventListener(
+      "loadend",
+      () => {
+        setMarkdownvalue(reader.result);
+      },
+      false,
+    );
+
+    if (file) {
+      reader.readAsText(file);
+    }
+
   }
+
 
   // @deprecate
   // const saveFile = async () => {
@@ -129,9 +149,9 @@ export default function Home() {
 
             </div>
             <div className='functions'>
-              <button className='btn' id='copy' onClick={copy} disabled={markdownvalue.length === 0}>Copy</button>
-              <button className='btn' id='paste' onClick={paste}>Paste</button>
-              <button className='btn' id='clear' onClick={clearTextarea} disabled={markdownvalue.length === 0}>Clear</button>
+              <button className='btn pad' id='copy' onClick={copy} disabled={markdownvalue.length === 0}>Copy</button>
+              <button className='btn pad' id='paste' onClick={paste}>Paste</button>
+              <button className='btn pad' id='clear' onClick={clearTextarea} disabled={markdownvalue.length === 0}>Clear</button>
             </div>
 
           </div>
@@ -144,8 +164,15 @@ export default function Home() {
             </div>
 
             <div className='functions'>
-              <button className='btn' onClick={openfileOndevices}>Open .md</button>
-              <button className='btn' id="save" onClick={saveOndevices} disabled={markdownvalue.length === 0}>Save .md</button>
+              {/* <button className='btn' onClick={openfileOndevices}>Open .md</button> */}
+              
+                <input type="file" id="inputfile" onChange={upgradedopenfileOndevices} />
+                <button className='btn inputfile-btn'>
+
+                  <label htmlFor="inputfile" className='pad'>Open .md</label>
+                </button>
+              
+              <button className='btn pad' id="save" onClick={saveOndevices} disabled={markdownvalue.length === 0}>Save .md</button>
             </div>
           </div>
         </div>

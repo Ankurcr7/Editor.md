@@ -146,15 +146,35 @@
 
 .functions button{
     color: white;
-    padding: 10px;
     cursor: pointer;
     border-radius: 10px;
     background-color: rgb(37, 37, 37);
     flex-grow: 1;
 }
 
+.functions .pad {
+    padding: 10px;
+}
+
 .functions button:is(:hover , :disabled){
     opacity: 0.8;
+}
+
+
+.functions [type="file"]{
+    display: none;
+}
+
+.functions label{
+    cursor: pointer;
+    background-color: transparent;
+    width: 100%;
+}
+
+.inputfile-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 textarea{
