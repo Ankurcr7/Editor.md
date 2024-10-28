@@ -49,26 +49,27 @@ export default function Home() {
 
   }
 
-  const saveFile = async () => {
-    try {
-      const newHandle = await window.showSaveFilePicker({
-        suggestedName: 'md.md',
-        types: [{
-          description: 'Text documents',
-          accept: {
-            'text/html': ['.md'],
-            'text/plain': ['.txt'],
-          },
-        }],
-      });
+  // @deprecate
+  // const saveFile = async () => {
+  //   try {
+  //     const newHandle = await window.showSaveFilePicker({
+  //       suggestedName: 'md.md',
+  //       types: [{
+  //         description: 'Text documents',
+  //         accept: {
+  //           'text/html': ['.md'],
+  //           'text/plain': ['.txt'],
+  //         },
+  //       }],
+  //     });
 
-      const writableStream = await newHandle.createWritable();
-      await writableStream.write(markdownvalue);
-      await writableStream.close();
-    } catch (error) { }
+  //     const writableStream = await newHandle.createWritable();
+  //     await writableStream.write(markdownvalue);
+  //     await writableStream.close();
+  //   } catch (error) { }
 
 
-  }
+  // }
 
   const saveOndevices = () => {
     const blob = new Blob([markdownvalue], { type: 'text/plain' });
