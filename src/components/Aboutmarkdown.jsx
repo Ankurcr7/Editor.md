@@ -2,7 +2,7 @@ import React from 'react'
 import '../styles/about.style.css'
 import { Link } from 'react-router-dom'
 
-export default function aboutmarkdown() {
+export default function Aboutmarkdown() {
 
 
   return (
