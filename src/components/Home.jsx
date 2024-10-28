@@ -34,7 +34,7 @@ export default function Home() {
 
   }
 
-  //@deprecate
+  // @deprecate
   // let fileHandle;
   // const openmd = async () => {
   //   try {
@@ -55,30 +55,31 @@ export default function Home() {
 
   // }
 
-  let fileHandle;
-  const openfileOndevices = async () => {
-    try {
-      [fileHandle] = await window.showOpenFilePicker({
-        types: [{
-          description: 'Text documents',
-          accept: {
-            'text/plain': ['.txt'],
-            'text/html': ['.md'],
-          },
-        }],
-      });
-      const file = await fileHandle.getFile();
-      const reader = new FileReader();
-      reader.addEventListener("loadend", () => {
-        setMarkdownvalue(reader.result)
-      }, false);
+  // @deprecate
+  // let fileHandle;
+  // const openfileOndevices = async () => {
+  //   try {
+  //     [fileHandle] = await window.showOpenFilePicker({
+  //       types: [{
+  //         description: 'Text documents',
+  //         accept: {
+  //           'text/plain': ['.txt'],
+  //           'text/html': ['.md'],
+  //         },
+  //       }],
+  //     });
+  //     const file = await fileHandle.getFile();
+  //     const reader = new FileReader();
+  //     reader.addEventListener("loadend", () => {
+  //       setMarkdownvalue(reader.result)
+  //     }, false);
 
-      if (file) {
-        reader.readAsText(file)
-      }
-    } catch (error) { }
+  //     if (file) {
+  //       reader.readAsText(file)
+  //     }
+  //   } catch (error) { }
 
-  }
+  // }
 
   const upgradedopenfileOndevices = () => {
     const [file] = document.querySelector("input[type=file]").files;
