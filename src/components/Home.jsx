@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import '../styles/home.style.css'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
@@ -6,6 +6,11 @@ import remarkGfm from 'remark-gfm'
 export default function Home() {
   const [markdownvalue, setMarkdownvalue] = useState("");
 
+  useEffect(() => {
+    const scroller = document.body
+    scroller.scrollIntoView({ behavior: 'smooth' })
+    scroller.scrollTo(0,0)
+  },[]);
 
 
   const clearTextarea = () => {
@@ -117,7 +122,7 @@ export default function Home() {
           <div className='left-container'>
             <h2 className='editing-title'>Markdown</h2>
             <div className='area'>
-              <textarea autoFocus autoSave='' className='scroll content' name="" id="mark" cols="30" rows="28" value={markdownvalue}
+              <textarea autoFocus autoSave='' className='scroll ' name="" id="mark" cols="30" rows="28" value={markdownvalue}
                 onChange={(e) => { setMarkdownvalue(e.target.value) }}
                 placeholder='Start your Markdown here'
               >{ }</textarea>
