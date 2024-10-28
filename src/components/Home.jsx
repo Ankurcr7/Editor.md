@@ -70,6 +70,16 @@ export default function Home() {
 
   }
 
+  const saveOndevices = () => {
+    const blob = new Blob([markdownvalue], { type: 'text/plain' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = 'md.txt';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link); 
+  }
+
 
   return (
 
@@ -103,7 +113,7 @@ export default function Home() {
 
             <div className='functions'>
               <button className='btn' onClick={openmd}>Open .md</button>
-              <button className='btn' id="save" onClick={saveFile} disabled={markdownvalue.length === 0}>Save .md</button>
+              <button className='btn' id="save" onClick={saveOndevices} disabled={markdownvalue.length === 0}>Save .md</button>
             </div>
           </div>
         </div>
