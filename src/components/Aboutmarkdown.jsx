@@ -1,8 +1,14 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import '../styles/about.style.css'
 import { Link } from 'react-router-dom'
 
 export default function Aboutmarkdown() {
+
+  useEffect(() => {
+    const scroller = document.body
+    scroller.scrollIntoView({ behavior: 'smooth' })
+    scroller.scrollTo(0,0)
+  },[]);
 
 
   return (
