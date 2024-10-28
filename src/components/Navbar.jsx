@@ -44,9 +44,9 @@ export default function Navbar() {
               </button>
             </h2>
             <ul className='options-ul'>
-              <Link className='' to={"/"}>Home</Link>
-              <Link className='' to={"/aboutmarkdown"}>About Markdown</Link>
-              <Link className='' to={"/howtouse"}>How to use</Link>
+              <Link className='' to={"/"} onClick={closemenu}>Home</Link>
+              <Link className='' to={"/aboutmarkdown"} onClick={closemenu}>About Markdown</Link>
+              <Link className='' to={"/howtouse"} onClick={closemenu}>How to use</Link>
             </ul>
 
           </div>
