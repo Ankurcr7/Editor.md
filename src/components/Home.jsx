@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import '../styles/home.style.css'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
@@ -6,6 +6,11 @@ import remarkGfm from 'remark-gfm'
 export default function Home() {
   const [markdownvalue, setMarkdownvalue] = useState("");
 
+  useEffect(() => {
+    const scroller = document.body
+    scroller.scrollIntoView({ behavior: 'smooth' })
+    scroller.scrollTo(0,0)
+  },[]);
 
 
   const clearTextarea = () => {
@@ -29,8 +34,29 @@ export default function Home() {
 
   }
 
+  //@deprecate
+  // let fileHandle;
+  // const openmd = async () => {
+  //   try {
+  //     [fileHandle] = await window.showOpenFilePicker({
+  //       types: [{
+  //         description: 'Text documents',
+  //         accept: {
+  //           'text/plain': ['.txt'],
+  //           'text/html': ['.md'],
+  //         },
+  //       }],
+  //     });
+  //     const file = await fileHandle.getFile();
+  //     const contents = await file.text();
+  //     setMarkdownvalue(contents)
+
+  //   } catch (error) { }
+
+  // }
+
   let fileHandle;
-  const openmd = async () => {
+  const openfileOndevices =async () => {
     try {
       [fileHandle] = await window.showOpenFilePicker({
         types: [{
@@ -42,11 +68,16 @@ export default function Home() {
         }],
       });
       const file = await fileHandle.getFile();
-      const contents = await file.text();
-      setMarkdownvalue(contents)
+      const reader = new FileReader();
+      reader.addEventListener("loadend", () => {
+        setMarkdownvalue(reader.result)
+      }, false);
 
+      if (file){
+        reader.readAsText(file)
+      }
     } catch (error) { }
-
+    
   }
 
   // @deprecate
@@ -78,7 +109,7 @@ export default function Home() {
     link.download = 'md.txt';
     document.body.appendChild(link);
     link.click();
-    document.body.removeChild(link); 
+    document.body.removeChild(link);
   }
 
 
@@ -113,7 +144,7 @@ export default function Home() {
             </div>
 
             <div className='functions'>
-              <button className='btn' onClick={openmd}>Open .md</button>
+              <button className='btn' onClick={openfileOndevices}>Open .md</button>
               <button className='btn' id="save" onClick={saveOndevices} disabled={markdownvalue.length === 0}>Save .md</button>
             </div>
           </div>

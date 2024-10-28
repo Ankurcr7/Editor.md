@@ -48,7 +48,7 @@ export default function Howtouse() {
             For inline code, wrap text in backticks: <code>`code`</code>
             For code blocks, use triple backticks.
             {/* <ConvertMarkdown text={'\`\`\`python\nprint("This is a Python code block.")'} /> */}
-            <ConvertMarkdown text={'\`\`\`python\ndef hello():\n    print("Hello World!")'} />
+            <ConvertMarkdown text={'```python\ndef hello():\n    print("Hello World!")'} />
 
             8. Horizontal Line:
             Use three or more dashes <code>---</code>, asterisks <code>***</code>, or underscores <code>___</code>.

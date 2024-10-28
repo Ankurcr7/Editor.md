@@ -38,7 +38,7 @@ export default function Navbar() {
         <div className='topbar-nav' id='menu' >
           <div className='options'>
             <h2 className='topbar-topside'>
-              <Link className='cursor-pointer color-white title' to={"/"}>Editor.md</Link>
+              <Link className='cursor-pointer color-white title' to={"/"} onClick={closemenu}>Editor.md</Link>
               <button className='closemenubtn'  onClick={closemenu}>
                 Close
               </button>
