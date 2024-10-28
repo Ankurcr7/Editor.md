@@ -3,8 +3,17 @@ import '../styles/use.style.css';
 import ConvertMarkdown from './ConvertMarkdown';
 import markdowngif from '../assets/markdown.gif'
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
 export default function Howtouse() {
+
+  useEffect(() => {
+    const scroller = document.body
+    scroller.scrollIntoView({ behavior: 'smooth' })
+    scroller.scrollTo(0,0)
+  },[]);
+
+
   return (
     <>
       <div className='full-container'>
