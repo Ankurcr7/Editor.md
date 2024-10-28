@@ -122,11 +122,13 @@ export default function Home() {
 
   // }
 
-  const saveOndevices = () => {
+  const saveOndevices = (option) => {
     const blob = new Blob([markdownvalue], { type: 'text/plain' });
     const link = document.createElement('a');
     link.href = URL.createObjectURL(blob);
-    link.download = 'md.txt';
+    if(option === 0){link.download = 'Markdown.txt';}
+    else{link.download = 'Markdown.md';}
+    
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -169,10 +171,13 @@ export default function Home() {
                 <input type="file" id="inputfile" onChange={upgradedopenfileOndevices} />
                 <button className='btn inputfile-btn'>
 
-                  <label htmlFor="inputfile" className='pad'>Open .md</label>
+                  <label htmlFor="inputfile" className='pad' style={{color:"greenyellow"}}>Open file</label>
                 </button>
               
-              <button className='btn pad' id="save" onClick={saveOndevices} disabled={markdownvalue.length === 0}>Save .md</button>
+              <button className='btn pad' id="save"  onClick={()=>{saveOndevices(0)}} disabled={markdownvalue.length === 0}>Save as <span style={{color:"orangered", backgroundColor:"transparent", fontWeight:"bolder"}} >.txt</span></button>
+
+              <button className='btn pad' id="save1"  onClick={()=>{saveOndevices(1)}} disabled={markdownvalue.length === 0}>Save as <span style={{color:"orangered", backgroundColor:"transparent", fontWeight:"bolder"}} >.md</span></button>
+
             </div>
           </div>
         </div>
