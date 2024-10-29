@@ -18,7 +18,7 @@ export default function Howtouse() {
     <>
       <div className='full-container'>
         <div className='narrow-container'>
-          <h1>How to use Markdown</h1>
+          <h1 className='h1'>How to use Markdown</h1>
           <div className='div'>
             1. Headings:
             Use <code>#</code> for headings. More <code>#</code> symbols mean a smaller heading size.

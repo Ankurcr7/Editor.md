@@ -145,7 +145,7 @@
     }
 }
 @media (max-width : 600px) {
-    .narrow-container h1{
+    .narrow-container .h1{
         font-size: x-large;
     }
     .narrow-container{
