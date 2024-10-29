@@ -126,9 +126,9 @@ export default function Home() {
     const blob = new Blob([markdownvalue], { type: 'text/plain' });
     const link = document.createElement('a');
     link.href = URL.createObjectURL(blob);
-    if(option === 0){link.download = 'Markdown.txt';}
-    else{link.download = 'Markdown.md';}
-    
+    if (option === 0) { link.download = 'Markdown.txt'; }
+    else { link.download = 'Markdown.md'; }
+
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -160,23 +160,25 @@ export default function Home() {
           <div className='right-container'>
             <h2 className='editing-title'>Preview</h2>
             <div className='area2'>
-              <ReactMarkdown className="markdownarea " remarkPlugins={[remarkGfm]}>
-                {markdownvalue}</ReactMarkdown>
+
+              <ReactMarkdown className="markdownarea " remarkPlugins={[remarkGfm]} children={markdownvalue}>
+                </ReactMarkdown>
+
 
             </div>
 
             <div className='functions'>
               {/* <button className='btn' onClick={openfileOndevices}>Open .md</button> */}
-              
-                <input type="file" id="inputfile" onChange={upgradedopenfileOndevices} />
-                <button className='btn inputfile-btn'>
 
-                  <label htmlFor="inputfile" className='pad' style={{color:"greenyellow"}}>Open file</label>
-                </button>
-              
-              <button className='btn pad' id="save"  onClick={()=>{saveOndevices(0)}} disabled={markdownvalue.length === 0}>Save as <span style={{color:"orangered", backgroundColor:"transparent", fontWeight:"bolder"}} >.txt</span></button>
+              <input type="file" id="inputfile" onChange={upgradedopenfileOndevices} />
+              <button className='btn inputfile-btn'>
 
-              <button className='btn pad' id="save1"  onClick={()=>{saveOndevices(1)}} disabled={markdownvalue.length === 0}>Save as <span style={{color:"orangered", backgroundColor:"transparent", fontWeight:"bolder"}} >.md</span></button>
+                <label htmlFor="inputfile" className='pad' style={{ color: "greenyellow" }}>Open file</label>
+              </button>
+
+              <button className='btn pad' id="save" onClick={() => { saveOndevices(0) }} disabled={markdownvalue.length === 0}>Save as <span style={{ color: "orangered", backgroundColor: "transparent", fontWeight: "bolder" }} >.txt</span></button>
+
+              <button className='btn pad' id="save1" onClick={() => { saveOndevices(1) }} disabled={markdownvalue.length === 0}>Save as <span style={{ color: "orangered", backgroundColor: "transparent", fontWeight: "bolder" }} >.md</span></button>
 
             </div>
           </div>

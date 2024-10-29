@@ -18,7 +18,7 @@ export default function Howtouse() {
     <>
       <div className='full-container'>
         <div className='narrow-container'>
-          <h1>How to use Markdown</h1>
+          <h1 className='h1'>How to use Markdown</h1>
           <div className='div'>
             1. Headings:
             Use <code>#</code> for headings. More <code>#</code> symbols mean a smaller heading size.
@@ -48,7 +48,7 @@ export default function Howtouse() {
             For inline code, wrap text in backticks: <code>`code`</code>
             For code blocks, use triple backticks.
             {/* <ConvertMarkdown text={'\`\`\`python\nprint("This is a Python code block.")'} /> */}
-            <ConvertMarkdown text={'```python\ndef hello():\n    print("Hello World!")'} />
+            <ConvertMarkdown text={'```python\ndef hello():\n    print("Hello World!")\n```'} />
 
             8. Horizontal Line:
             Use three or more dashes <code>---</code>, asterisks <code>***</code>, or underscores <code>___</code>.
