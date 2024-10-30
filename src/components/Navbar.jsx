@@ -2,24 +2,27 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/navbar.style.css'
 
-export default function Navbar() {
+export function showloadbar(){
+  const loader_container = document.getElementById("loader-container");
+  const loader= document.getElementById("loader");
+  const time = 800;
 
-  const showloadbar = ()=>{
-    const loader_container = document.getElementById("loader-container");
-    const loader= document.getElementById("loader");
-    const time = 800;
+  loader_container.style.visibility="visible"
+  loader.style.animationName = "loading-animation"
+  loader.style.animationDuration = `${time}ms`
+  loader.style.animationIterationCount = "1"
+  loader.style.animationTimingFunction = "ease-in-out"
 
-    loader_container.style.display="block"
-    loader.style.animationName = "loading-animation"
-    loader.style.animationDuration = `${time}ms`
-    loader.style.animationIterationCount = "1"
-    loader.style.animationTimingFunction = "ease-in-out"
+  setTimeout(() => {
+    loader_container.style.display="hidden"
+    loader.style.animationName = ""
+  }, time+5);
+  
+}
 
-    setTimeout(() => {
-      loader_container.style.display="none"
-    }, time+5);
-    
-  }
+
+function Navbar() {
+
 
 
   const openmenu = () => {
@@ -39,7 +42,7 @@ export default function Navbar() {
 
         <div className='inner-nav'>
           <h2>
-            <Link className='cursor-pointer color-white title' to={"/"}>Editor.md</Link>
+            <Link className='cursor-pointer color-white title' to={"/"} onClick={showloadbar}>Editor.md</Link>
           </h2>
           <ul className='ul'>
             <li><Link className='link' to={"/"} onClick={showloadbar}>Home</Link></li>
@@ -89,3 +92,5 @@ export default function Navbar() {
     </>
   )
 }
+
+export default Navbar;

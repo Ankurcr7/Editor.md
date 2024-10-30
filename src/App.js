@@ -14,9 +14,6 @@ import {
 
 function App() {
 
-  
-
-
   return (
     <>
     <div className='loading-container' id='loader-container'>
