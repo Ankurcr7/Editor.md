@@ -41,6 +41,40 @@ h1 , h2 , h3 , h4,  h6{
 }
 
 
+.loading-container{
+  position: sticky;
+  top: 0;
+  display: none;
+  width: 100%;
+  height: 2px;
+  background-color: #00222b;
+  z-index: 10;
+}
+
+.loading-animation{
+  background-color: #007494;
+  width: 0%;
+  height: 100%;
+
+}
+
+
+@keyframes loading-animation {
+  0%{
+    width: 0;
+  }
+  70%{
+    width: 65%;
+  }
+  100%{
+    width: 100%;
+    .loading-container{
+      display: none;
+    }
+  }
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
