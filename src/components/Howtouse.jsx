@@ -4,6 +4,7 @@ import ConvertMarkdown from './ConvertMarkdown';
 import markdowngif from '../assets/markdown.gif'
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
+import { showloadbar } from './Navbar';
 
 export default function Howtouse() {
 
@@ -77,7 +78,7 @@ export default function Howtouse() {
             width: "100%",
             display: "flex", justifyContent: "center", alignItems: "center", padding: "15px"
           }}>
-            <button><Link to={"/"} className='link-btn'>Let's GO</Link> </button>
+            <button><Link to={"/"} className='link-btn' onClick={showloadbar}>Let's GO</Link> </button>
           </div>
 
         </div>
