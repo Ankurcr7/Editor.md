@@ -5,7 +5,6 @@ import Home from './components/Home';
 import Howtouse from './components/Howtouse';
 import Aboutmarkdown from './components/Aboutmarkdown';
 
-
 import {
   BrowserRouter as Router,
   Route,
@@ -14,8 +13,12 @@ import {
 
 
 function App() {
+
   return (
     <>
+    <div className='loading-container' id='loader-container'>
+      <div className='loading-animation' id="loader"></div>
+    </div>
     <Router>
       <Navbar/>
       <Routes>

@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react'
 import '../styles/about.style.css'
 import { Link } from 'react-router-dom'
+import { showloadbar } from './Navbar';
 
 export default function Aboutmarkdown() {
 
@@ -72,7 +73,7 @@ export default function Aboutmarkdown() {
 
           <div className='go-to-btn-div' style={{width:"100%", 
         display:"flex", justifyContent:"center", alignItems:"center" , padding:"20px"}}>
-            <button><Link to={"/howtouse"} className='link-btn'>Go to 'How to use'</Link> </button>
+            <button><Link to={"/howtouse"} className='link-btn' onClick={showloadbar}>Go to 'How to use'</Link> </button>
           </div>
         </div>
 
