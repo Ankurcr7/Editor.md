@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Howtouse from './components/Howtouse';
 import Aboutmarkdown from './components/Aboutmarkdown';
+import ThemeOption from './components/ThemeOption'
 
 import {
   BrowserRouter as Router,
@@ -21,6 +22,11 @@ function App() {
     </div>
     <Router>
       <Navbar/>
+      <div className='theme-options'>
+      <h2>Theme Option: </h2>
+        <ThemeOption theme="dark"/>
+        <ThemeOption theme="light"/>
+      </div>
       <Routes>
           <Route path='/' element={<Home/>}  />
           <Route path='/aboutmarkdown' element={<Aboutmarkdown/>}  />

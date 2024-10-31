@@ -1,12 +1,12 @@
 *{
   padding: 0;
   margin: 0;
-  background-color: black;
+  background-color:var(--primary-background-color);
   
 }
 
 div{
-  color: white;
+  color: var( --primary-text-color);
 }
 
 body {

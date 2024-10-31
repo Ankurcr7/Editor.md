@@ -1,3 +1,100 @@
+:root {
+  --primary-background-color: black;
+  --secondary-background-color: #1d1d1d;
+
+  --primary-text-color: #fff;
+  --secondary-text-color: rgba(255, 255, 255, 0.5);
+
+  --primary-border-color: #4b4c53;
+
+  --background-clear: rgb(122, 0, 0);
+  --background-copy: rgba(37, 37, 37, 0.5);
+
+  --button-solid-text-color: #fff;
+
+  --button-outlined-background-color: transparent;
+
+  --link-color: rgb(87, 137, 255);
+  --link-hover-color: rgba(87, 137, 255, 0.7);
+
+  --scrollbar-background-color: rgb(48, 48, 48);
+  --scrollbar-thumb-color: rgb(0, 166, 181);
+
+  --about-link-color: rgb(88, 130, 255);
+  --about-link-hover-color: rgba(88, 130, 255, 0.7);
+
+  --button-hover-background: rgb(41, 41, 41);
+  --topbar-background: #3a3a3a57;
+
+  --hover-border-color: gray;
+  --button-gradient: linear-gradient(135deg, black, rgb(52, 52, 52));
+
+  --card-border-color: rgb(123, 123, 123);
+  --copy-btn-background: #1d1d1d;
+  --copy-btn-hover-background: #272727;
+  --code-text-color: #aae7ff;
+}
+
+[data-theme="light"] {
+    --primary-background-color: #ffffff;
+    --secondary-background-color: #d1d1d1;
+  
+    --primary-text-color: #000000;
+    --secondary-text-color: rgba(0, 0, 0, 0.6);
+  
+    --primary-border-color: #dcdcdc;
+  
+    --background-clear: rgb(236, 176, 176);
+    --background-copy: rgba(240, 240, 240, 0.9);
+  
+    --button-solid-text-color: #000;
+  
+    --button-outlined-background-color: transparent;
+  
+    --link-color: rgb(0, 102, 204);
+    --link-hover-color: rgba(0, 102, 204, 0.8);
+  
+    --scrollbar-background-color: rgb(220, 220, 220);
+    --scrollbar-thumb-color: rgb(100, 100, 100);
+  
+    --about-link-color: rgb(0, 102, 204);
+    --about-link-hover-color: rgba(0, 102, 204, 0.8);
+  
+    --button-hover-background: rgb(230, 230, 230);
+    --topbar-background: rgba(200, 200, 200, 0.8);
+  
+    --hover-border-color: lightgray;
+    --button-gradient: linear-gradient(135deg, #ffffff, #e0e0e0);
+  
+    --card-border-color: #d3d3d3;
+    --copy-btn-background: #f2f2f2;
+    --copy-btn-hover-background: #e0e0e0;
+    --code-text-color: #004466;
+}
+
+.theme-option {
+  height: 25px;
+  width: 25px;
+  border: 1px solid;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#theme-dark {
+  --primary-background-color: black;
+  --secondary-background-color: #373737;
+}
+
+#theme-light {
+  --primary-background-color: rgb(240, 240, 240);
+  --secondary-background-color: #cccccc;
+}
+
+.theme-options {
+  display: flex;
+  gap: 10px;
+}
+
 .App {
   text-align: center;
 }
@@ -14,34 +111,36 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: var(--secondary-background-color);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: var(--primary-text-color);
 }
 
 .App-link {
   color: #61dafb;
 }
 
-
-.color-white{
-  color: white;
-} 
-.cursor-pointer{
+.color-white {
+  color: var(--primary-text-color);
+}
+.cursor-pointer {
   cursor: pointer;
 }
 
-h1 , h2 , h3 , h4,  h6{
+h1,
+h2,
+h3,
+h4,
+h6 {
   background-color: transparent;
 }
 
-
-.loading-container{
+.loading-container {
   position: sticky;
   top: 0;
   display: block;
@@ -52,29 +151,26 @@ h1 , h2 , h3 , h4,  h6{
   z-index: 10;
 }
 
-.loading-animation{
+.loading-animation {
   background-color: #007494;
   width: 0%;
   height: 100%;
-
 }
 
-
 @keyframes loading-animation {
-  0%{
+  0% {
     width: 0;
   }
-  70%{
+  70% {
     width: 65%;
   }
-  100%{
+  100% {
     width: 100%;
-    .loading-container{
+    .loading-container {
       visibility: hidden;
     }
   }
 }
-
 
 @keyframes App-logo-spin {
   from {
