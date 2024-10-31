@@ -173,7 +173,7 @@ export default function Home() {
               <input type="file" id="inputfile" onChange={upgradedopenfileOndevices} />
               <button className='btn inputfile-btn'>
 
-                <label htmlFor="inputfile" className='pad' style={{ color: "greenyellow" }}>Open file</label>
+                <label htmlFor="inputfile" className='pad' style={{ color: "#0bce0a" }}>Open file</label>
               </button>
 
               <button className='btn pad' id="save" onClick={() => { saveOndevices(0) }} disabled={markdownvalue.length === 0}>Save as <span style={{ color: "orangered", backgroundColor: "transparent", fontWeight: "bolder" }} >.txt</span></button>
