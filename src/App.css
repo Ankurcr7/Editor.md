@@ -45,7 +45,8 @@
   
     --primary-border-color: #dcdcdc;
   
-    --background-clear: rgb(236, 176, 176);
+    --background-clear: rgb(255, 0, 0);
+    /* --background-clear: rgb(236, 176, 176); */
     --background-copy: rgba(240, 240, 240, 0.9);
   
     --button-solid-text-color: #000;
@@ -74,8 +75,8 @@
 }
 
 .theme-option {
-  height: 25px;
-  width: 25px;
+  height: 22px;
+  width: 22px;
   border: 1px solid;
   border-radius: 50%;
   cursor: pointer;
@@ -94,6 +95,8 @@
 .theme-options {
   display: flex;
   gap: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .App {

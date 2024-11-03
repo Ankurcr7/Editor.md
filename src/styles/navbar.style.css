@@ -79,7 +79,7 @@
     display: flex;
     padding: 5px;
     margin-left: 10px;
-    font-size: 24px;
+    /* font-size: 24px; */
 }
 
 .ul li {

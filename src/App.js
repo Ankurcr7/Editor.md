@@ -23,7 +23,9 @@ function App() {
     <Router>
       <Navbar/>
       <div className='theme-options'>
-      <h2>Theme Option: </h2>
+      <h2 style={{
+        fontSize:"18px"
+      }}>Theme Option: </h2>
         <ThemeOption theme="dark"/>
         <ThemeOption theme="light"/>
       </div>

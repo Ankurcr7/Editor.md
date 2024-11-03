@@ -11,8 +11,8 @@ export default function Howtouse() {
   useEffect(() => {
     const scroller = document.body
     scroller.scrollIntoView({ behavior: 'smooth' })
-    scroller.scrollTo(0,0)
-  },[]);
+    scroller.scrollTo(0, 0)
+  }, []);
 
 
   return (
@@ -74,11 +74,14 @@ export default function Howtouse() {
           </div>
 
           <div className='go-to-btn-div' style={{
-            backgroundColor:"transparent",
+            backgroundColor: "transparent",
             width: "100%",
             display: "flex", justifyContent: "center", alignItems: "center", padding: "15px"
           }}>
-            <button><Link to={"/"} className='link-btn' onClick={showloadbar}>Let's GO</Link> </button>
+            <button
+              style={{ backgroundColor: "transparent" }}
+            ><Link to={"/"} className='link-btn' onClick={showloadbar}>Let's GO</Link>
+            </button>
           </div>
 
         </div>
