@@ -34,6 +34,8 @@
   --copy-btn-background: #1d1d1d;
   --copy-btn-hover-background: #272727;
   --code-text-color: #aae7ff;
+
+  --navbar-animation-height: 4px;
 }
 
 [data-theme="light"] {
@@ -72,6 +74,10 @@
     --copy-btn-background: #f2f2f2;
     --copy-btn-hover-background: #e0e0e0;
     --code-text-color: #004466;
+}
+
+.body{
+  height: 100vh;
 }
 
 .theme-option {
@@ -150,7 +156,7 @@ h6 {
   display: block;
   visibility: hidden;
   width: 100%;
-  height: 2px;
+  height: var(--navbar-animation-height);
   background-color: transparent;
   z-index: 10;
 }

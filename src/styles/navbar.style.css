@@ -68,7 +68,11 @@
 }
 
 .inner-nav {
-    padding: 10px;
+    /* padding: 10px; */
+    padding-top: calc(10px - var(--navbar-animation-height));
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
